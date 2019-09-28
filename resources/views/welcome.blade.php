@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #FFe4B5;
+                background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -49,7 +49,7 @@
             }
 
             .links > a {
-                color: #f08080;
+                color: #636b6f;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -60,7 +60,6 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-                color: #dc143C;
             }
         </style>
     </head>
@@ -94,7 +93,6 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                    
                 </div>
             </div>
         </div>

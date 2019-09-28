@@ -33,6 +33,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Kategori
+                            </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="kategori_artikel">Kategori Artikel</a>
+                                  <a class="dropdown-item" href="kategori_galeri">Kategori Galeri</a>
+                                  <a class="dropdown-item" href="kategori_berita">Kategori Berita</a>
+                                  <a class="dropdown-item" href="kategori_pengumuman">Kategori Pengumuman </a>
+                                  <div class="dropdown-divider"></div>
+                                </div>
+                              </li>
 
                     </ul>
 
@@ -43,6 +54,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
+                            <li class="nav-item dropdown">
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
