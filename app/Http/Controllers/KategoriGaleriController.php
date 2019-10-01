@@ -14,4 +14,11 @@ class KategoriGaleriController extends Controller
     	return view ('kategori_galeri.index',compact('listKategoriGaleri'));
     	//return view (view: 'kategori_artikel.index')->with('data',$listKategoriArtikel);
 	}
+		public function show($id){
+		//Elequent
+		//$KategoriArtikel=KategoriArtikel::where('id',$id)->first(); //select *from kategori_artikel where id=$id limit 1
+		$KategoriGaleri=KategoriGaleri::find($id);
+
+		return view('kategori_galeri.show',compact('KategoriGaleri'));
+	}
 }

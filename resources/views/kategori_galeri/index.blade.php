@@ -14,6 +14,7 @@
                         <th scope="col">Nama</th>
                         <th scope="col">User_id</th>
                          <th scope="col">Create</th>
+                         <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,6 +25,9 @@
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
                         </tr>
+                         <td>
+                            <a href="{!! route('kategori_berita.show',[$item->id]) !!}">Lihat</a>
+                        </td>
                         @endforeach
                     </tbody>
                 </table>
