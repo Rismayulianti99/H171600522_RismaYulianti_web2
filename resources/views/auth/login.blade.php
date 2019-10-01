@@ -12,12 +12,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('phone Number') }}</label>
+                            <label form ="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
 
                             <div class="col-md-6">
                                 <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
-                                @error('phone')
+                                @error('Phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -48,7 +48,7 @@
                                 <button type="submit" class="btn btn-success btn-refresh" onclick="refreshCaptcha()">Refresh</button>
                             </div>
 
-                                <input id="captcha" type="captcha" class="form-control mt-2 @error('captcha') is-invalid @enderror" name="captcha" placeholder="Enter Captcha">
+                                <input id="captcha" type="captcha" class="col-md-4 form-control mt-2 @error('captcha') is-invalid @enderror" name="captcha">
 
                                 @error('captcha')
                                     <span class="invalid-feedback" role="alert">
@@ -77,8 +77,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
                             </div>

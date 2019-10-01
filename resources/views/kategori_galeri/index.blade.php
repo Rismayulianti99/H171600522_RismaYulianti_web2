@@ -7,28 +7,35 @@
             <div class="card">
                 <div class="card-header">Kategori Galeri</div>
                 <div class="card-body">
+                    <a href="{!! route('kategori_galeri.create') !!}" class="btn btn-primary">Tambah Data</a>
                 <table class="table table-bordered">
-                    <thead class="bg-White">
+                    <thead class="bg-warning">
                         <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Nama</th>
                         <th scope="col">User_id</th>
-                         <th scope="col">Create</th>
-                         <th scope="col">Aksi</th>
+                        <th scope="col">Create</th>
+                        <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+
                         @foreach( $listKategoriGaleri as $item)
                         <tr>
                         <td>{!! $item->id !!}</td>
                         <td>{!! $item->nama !!}</td>
                         <td>{!! $item->users_id !!}</td>
-                        <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
-                        </tr>
-                         <td>
-                            <a href="{!! route('kategori_berita.show',[$item->id]) !!}">Lihat</a>
+                        <td>{!! $item->created_at->format('d/m/Y H:i:s')!!}</td>
+                        <td>
+                         <a href="{!! route('kategori_galeri.show',[$item->id]) !!}">Lihat</a>
                         </td>
-                        @endforeach
+                        </tr>
+                       @endforeach
                     </tbody>
                 </table>
-		@endsection
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+@endsection
