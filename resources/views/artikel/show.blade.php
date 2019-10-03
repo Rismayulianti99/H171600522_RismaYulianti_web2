@@ -18,11 +18,7 @@
                          <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->judul !!}</label>
                     </div>
 
-                     <div class="form-group row">
-                         <label  class="col-md-4 col-form-label text-md-right">Kategori</label>
-                         <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->kategori_atikel_id !!}
-                         </label>
-                    </div>
+                    
 
                     <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">Users Id</label>
@@ -33,6 +29,12 @@
                     <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">Create</label>
                          <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->created_at->format('d/m/Y H:i') !!}</label>
+                    </div>
+
+                     <div class="form-group row">
+                         <label  class="col-md-4 col-form-label text-md-right">Kategori</label>
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->kategori_atikel_id !!}
+                         </label>
                     </div>
 
                     <div class="form-group row mb-0">
