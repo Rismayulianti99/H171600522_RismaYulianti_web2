@@ -2,42 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Galeri;
 use Illuminate\Http\Request;
+use App\Galeri;
 use App\KategoriGaleri;
 
 class GaleriController extends Controller
 {
-    public function index(){
-        
-        $listGaleri=Galeri::all(); 
+    function index(){
+        $galeri=galeri::all();
 
-        return view ('galeri.index',compact('listGaleri'));
-        //return view ('artikel.index'->with('data',$listArtikel);
+    return view('galeri.index',compact ('galeri'));
+            
     }
 
-    public function show($id) {
+    public function show($id)
+    {
+    
+        $galeri=galeri::find($id);
 
-        //$Artikel=Artikel::where('id',$id)->first();
-        $Galeri=Galeri::find($id);
+        return view('galeri.show',compact( 'galeri'));
+    } 
 
-        return view ('galeri.show', compact('Galeri'));
-        
-    }
-
-    public function create(){
-
+    public function create()
+    {
         $KategoriGaleri=KategoriGaleri::pluck('nama','id');
         
-        return view('galeri.create', compact('Kategorigaleri'));
+
+        return view( 'galeri.create',compact('KategoriGaleri'));
     }
-
-    public function store(Request $request){
-
+    
+    public function store(Request $request)
+    {
         $input= $request->all();
-
-        Galeri::create($input);
+        
+        galeri::create($input);
 
         return redirect(route('galeri.index'));
     }
+
 }

@@ -12,5 +12,9 @@ class Artikel extends Model
     		'judul','isi','users_id','kategori_artikel_id'
     	];
 
-    	protected $casts=[ ];
+    	
+    	protected $casts=[
+    	'delete_at'=>'datetime'
+    ];
+
 }

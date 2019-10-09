@@ -5,13 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-info" button class="btn btn-primary">Tambah Kategori Galeri</div>
+                <div class="card-header bg-info" button class="btn btn-primary">Tambah Artikel</div>
           
-                <div class="card-body">
-                    
-                    {!! Form::open(['route' => 'kategori_galeri.store', 'method' => 'post']) !!}
+                <div class="card-body">                   
+                    {!! Form::model($listArtikel, ['route' => ['artikel.update', $listArtikel->id],'method'=>'patch']) !!}
                         
-                        @include('kategori_galeri.form')
+                        @include('kategori_artikel.form')
                     
                     {!! Form::close() !!}
 

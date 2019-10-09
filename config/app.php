@@ -21,7 +21,7 @@ return [
 
     
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Makassar',
 
     
 

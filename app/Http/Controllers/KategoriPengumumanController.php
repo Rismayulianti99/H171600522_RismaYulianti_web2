@@ -17,9 +17,9 @@ class KategoriPengumumanController extends Controller
 	public function show($id){
 		//Elequent
 		//$KategoriArtikel=KategoriArtikel::where('id',$id)->first(); //select *from kategori_artikel where id=$id limit 1
-		$KategoriPengumuman=KategoriPengumuman::find($id);
+		$listKategoriPengumuman=KategoriPengumuman::find($id);
 
-		return view('kategori_pengumuman.show',compact('KategoriPengumuman'));
+		return view('kategori_pengumuman.show',compact('listKategoriPengumuman'));
 	}
 	public function create(){
         return view('kategori_pengumuman.create');
@@ -32,5 +32,49 @@ class KategoriPengumumanController extends Controller
 
         return redirect(route('kategori_pengumuman.index'));
     }
+
+    public function edit($id) {
+        $listKategoriPengumuman=KategoriPengumuman::find($id);
+
+        if (empty($listKategoriPengumuman)){
+            return redirect(route ('kategori_pengumuman.index'));
+        }
+
+        return view('kategori_pengumuman.edit',compact('listKategoriPengumuman'));
+    }
+
+ public function update($id,Request $request)
+    {
+      $listKategoriPengumuman=KategoriPengumuman::find($id);
+      $input=$request->all();
+  
+      if(empty($listKategoriPengumuman))
+      {
+        return redirect(route('kategori_pengumuman.index'));
+      }
+
+      $listKategoriPengumuman->update($input);
+      return redirect(route('kategori_pengumuman.index'));
+    }
+
+    public function destroy($id) {
+        $listKategoriPengumuman=KategoriPengumuman::find($id);
+
+        if (empty($listKategoriPengumuman)){
+            return redirect(route ('kategori_pengumuman.index'));
+    }
+
+    $listKategoriPengumuman->delete();
+        return redirect(route('kategori_pengumuman.index'));
+    }
+
+    public function trash(){
+        
+        $listKategoriPengumuman=KategoriPengumuman::onlyTrashed(); 
+
+        return view ('kategori_pengumuman.index',compact('listKategoriPengumuman'));
+        //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);
+    }
 }
+
 

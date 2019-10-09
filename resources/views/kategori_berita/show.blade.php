@@ -10,28 +10,28 @@
                 <div class="card-body">
                     <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">ID</label>
-                         <label  class="col-md-8 col-form-label text-md-left">{!! $KategoriBerita->id !!}</label>
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $listKategoriBerita->id !!}</label>
                     </div>
 
                     <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">Nama</label>
-                         <label  class="col-md-8 col-form-label text-md-left">{!! $KategoriBerita->nama !!}</label>
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $listKategoriBerita->nama !!}</label>
                     </div>
 
                      <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">Users Id</label>
-                         <label  class="col-md-8 col-form-label text-md-left">{!! $KategoriBerita->users_id !!}
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $listKategoriBerita->users_id !!}
                          </label>
                     </div>
 
                     <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">Create</label>
-                         <label  class="col-md-8 col-form-label text-md-left">{!! $KategoriBerita->created_at->format('d/m/Y H:i') !!}</label>
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $listKategoriBerita->created_at->format('d/m/Y H:i') !!}</label>
                     </div>
 
                     <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">Update</label>
-                         <label  class="col-md-8 col-form-label text-md-left">{!! $KategoriBerita->updated_at->format('d/m/Y H:i') !!}</label>
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $listKategoriBerita->updated_at->format('d/m/Y H:i') !!}</label>
                     </div>
 
                     <div class="form-group row mb-0">

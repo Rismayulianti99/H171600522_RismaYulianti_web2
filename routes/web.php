@@ -19,40 +19,64 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/kategori_artikel', 'KategoriArtikelController@index')->name('kategori_artikel.index');
+
+Route::resource('kategori_artikel','KategoriArtikelController');
+Route::get('kategori_artikel/trash','KategoriArtikelController@trash')->name('kategori_artikel.trash');
+
+
+/*Route::get('/kategori_artikel', 'KategoriArtikelController@index')->name('kategori_artikel.index');
 Route::get('/kategori_artikel/create', 'KategoriArtikelController@create')->name('kategori_artikel.create');
 Route::post('/kategori_artikel','KategoriArtikelController@store')->name('kategori_artikel.store');
 Route::get('/kategori_artikel/{id}','KategoriArtikelController@show')->name('kategori_artikel.show');
+Route::get('/kategori_artikel/{id}/edit','KategoriArtikelController@edit')->name('kategori_artikel.edit');
+Route::patch('/kategori_artikel/{id}','KategoriArtikelController@update')->name('kategori_artikel.update');
+Route::delete('/kategori_artikel/{id}','KategoriArtikelController@destroy')->name('kategori_artikel.destroy');*/
+
 
 Route::get('/artikel', 'ArtikelController@index')->name('artikel.index');
 Route::get('/artikel/create', 'ArtikelController@create')->name('artikel.create');
 Route::post('/artikel','ArtikelController@store')->name('artikel.store');
 Route::get('/artikel/{id}','ArtikelController@show')->name('artikel.show');
 
-Route::get('/kategori_berita', 'KategoriBeritaController@index')->name('kategori_berita.index');
+Route::resource('kategori_berita','KategoriBeritaController');
+Route::get('kategori_berita/trash','KategoriBeritaController@trash')->name('kategori_berita.trash');
+
+/*Route::get('/kategori_berita', 'KategoriBeritaController@index')->name('kategori_berita.index');
 Route::get('/kategori_berita/create', 'KategoriBeritaController@create')->name('kategori_berita.create');
 Route::post('/kategori_berita','KategoriBeritaController@store')->name('kategori_berita.store');
 Route::get('/kategori_berita/{id}','KategoriBeritaController@show')->name('kategori_berita.show');
+Route::get('/kategori_berita/{id}/edit','KategoriBeritaController@edit')->name('kategori_berita.edit');
+Route::patch('/kategori_berita/{id}','KategoriBeritaController@update')->name('kategori_berita.update');*/
 
 Route::get('/berita', 'BeritaController@index')->name('berita.index');
 Route::get('/berita/create', 'BeritaController@create')->name('berita.create');
 Route::post('/berita','BeritaController@store')->name('berita.store');
 Route::get('/berita/{id}','BeritaController@show')->name('berita.show');
 
-Route::get('/kategori_galeri', 'KategoriGaleriController@index')->name('kategori_galeri.index');
+Route::resource('kategori_galeri','KategoriGaleriController');
+Route::get('kategori_galeri/trash','KategoriGaleriController@trash')->name('kategori_galeri.trash');
+
+/*Route::get('/kategori_galeri', 'KategoriGaleriController@index')->name('kategori_galeri.index');
 Route::get('/kategori_galeri/create', 'KategoriGaleriController@create')->name('kategori_galeri.create');
 Route::post('/kategori_galeri','KategoriGaleriController@store')->name('kategori_galeri.store');
 Route::get('/kategori_galeri/{id}','KategoriGaleriController@show')->name('kategori_galeri.show');
+Route::get('/kategori_galeri/{id}/edit','KategoriGaleriController@edit')->name('kategori_galeri.edit');
+Route::patch('/kategori_galeri/{id}','KategoriGaleriController@update')->name('kategori_galeri.update');*/
 
 Route::get('/galeri', 'GaleriController@index')->name('galeri.index');
 Route::get('/galeri/create', 'GaleriController@create')->name('galeri.create');
 Route::post('/galeri','GaleriController@store')->name('galeri.store');
 Route::get('/galeri/{id}','GaleriController@show')->name('galeri.show');
 
-Route::get('/kategori_pengumuman', 'KategoriPengumumanController@index')->name('kategori_pengumuman.index');
+Route::resource('kategori_pengumuman','KategoriPengumumanController');
+Route::get('kategori_pengumuman/trash','KategoriPengumumanController@trash')->name('kategori_pengumuman.trash');
+
+/*Route::get('/kategori_pengumuman', 'KategoriPengumumanController@index')->name('kategori_pengumuman.index');
 Route::get('/kategori_pengumuman/create', 'KategoriPengumumanController@create')->name('kategori_pengumuman.create');
 Route::post('/kategori_pengumuman','KategoriPengumumanController@store')->name('kategori_pengumuman.store');
 Route::get('/kategori_pengumuman/{id}','KategoriPengumumanController@show')->name('kategori_pengumuman.show');
+Route::get('/kategori_pengumuman/{id}/edit','KategoriPengumumanController@edit')->name('kategori_pengumuman.edit');
+Route::patch('/kategori_pengumuman/{id}','KategoriPengumumanController@update')->name('kategori_pengumuman.update');*/
 
 Route::get('/pengumuman', 'PengumumanController@index')->name('pengumuman.index');
 Route::get('/pengumuman/create', 'PengumumanController@create')->name('pengumuman.create');

@@ -32,6 +32,12 @@
                         <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
                         <td>
                          <a href="{!! route('artikel.show',[$item->id]) !!}"class="btn btn-success">Lihat</a>
+
+                         {!! Form::open(['route' => ['artikel.destroy', $item->id],'method'=>'delete']) !!}
+
+                         {!! Form::submit('Hapus',['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('do you want to delete this data?')"]); !!}
+
+                         {!! Form::close() !!}
                         </td>
                         </tr>
                        @endforeach

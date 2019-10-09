@@ -27,7 +27,7 @@ class ArtikelController extends Controller
 
     public function create(){
 
-        $KategoriArtikel=KategoriArtikel::pluck('nama','id');
+        $KategoriArtikel=KategoriArtikel::pluck('judul','id');
         
         return view('artikel.create', compact('KategoriArtikel'));
     }
@@ -39,5 +39,38 @@ class ArtikelController extends Controller
         Artikel::create($input);
 
         return redirect(route('artikel.index'));
+    }
+
+     public function update($id,Request $request)
+    {
+      $listiArtikel=Artikel::find($id);
+      $input=$request->all();
+  
+      if(empty($listArtikel))
+      {
+        return redirect(route('artikel.index'));
+      }
+
+      $listArtikel->update($input);
+      return redirect(route('artikel.index'));
+    }
+
+    public function destroy($id) {
+        $listArtikel=Artikel::find($id);
+
+        if (empty($listArtikel)){
+            return redirect(route ('artikel.index'));
+    }
+
+    $listArtikel->delete();
+        return redirect(route('artikel.index'));
+    }
+
+    public function trash(){
+        
+        $listArtikel=Artikel::onlyTrashed(); 
+
+        return view ('artikel.index',compact('listArtikel'));
+        //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);
     }
 }

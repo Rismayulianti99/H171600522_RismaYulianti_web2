@@ -33,9 +33,11 @@
                 <div class="card-header">Tambah Artikel</div>
 
                 <div class="card-body">
-                    <form method="post" action="{!! route('artikel.store') !!}">
+                    {!! Form::model($listArtikel, ['route' => ['artikel.update', $listArtikel->id],'method'=>'patch']) !!}
+                        
                         @include('artikel.form')
-                    </form>
+                    
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
