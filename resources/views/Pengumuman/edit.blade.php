@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Tambah Artikel</div>
+                <div class="card-header">Tambah Pengumuman</div>
 
                 <div class="card-body">                   
-                    {!! Form::model($Artikel, ['route' => ['artikel.update', $Artikel->id],'method'=>'patch']) !!}
+                    {!! Form::model($Pengumuman, ['route' => ['pengumuman.update', $Pengumuman->id],'method'=>'patch']) !!}
                         
-                        @include('artikel.form')
+                        @include('pengumuman.form')
                     
                     {!! Form::close() !!}
 

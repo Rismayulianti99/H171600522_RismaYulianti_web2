@@ -8,6 +8,9 @@
                 <div class="card-header">Kategori Berita</div>
                 <div class="card-body">
                     <a href="{!! route('kategori_berita.create') !!}" class="btn btn-primary">Tambah Data</a>
+
+                    <a href="{!! route('kategori_berita.trash') !!}" class="btn btn-danger">See delete data</a>
+                    </div>
                 <table class="table table-bordered">
                     <thead class="bg-warning">
                         <tr>

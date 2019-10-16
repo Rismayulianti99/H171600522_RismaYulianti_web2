@@ -16,6 +16,10 @@ class AddColumnDeletedAtInKategoriBerita extends Migration
         Schema::table('kategori_berita', function (Blueprint $table) {
             $table->softDeletes();
         });
+
+         Schema::table('berita', function (Blueprint $table) {
+            $table->softDeletes();
+        });
        
     }
 
@@ -30,6 +34,9 @@ class AddColumnDeletedAtInKategoriBerita extends Migration
             $table->dropSoftDeletes();
         });
 
+        Schema::table('berita', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         
     }
 }

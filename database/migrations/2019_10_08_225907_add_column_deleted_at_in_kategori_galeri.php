@@ -16,6 +16,10 @@ class AddColumnDeletedAtInKategoriGaleri extends Migration
         Schema::table('kategori_galeri', function (Blueprint $table) {
             $table->softDeletes();
         });
+
+        Schema::table('galeri', function (Blueprint $table) {
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -26,6 +30,10 @@ class AddColumnDeletedAtInKategoriGaleri extends Migration
     public function down()
     {
         Schema::table('kategori_galeri', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
+
+        Schema::table('galeri', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
     }
